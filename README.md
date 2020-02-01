@@ -4,9 +4,9 @@
  to work on same project like this ( should have a database )
  
  quick setup:
- - 1.clone the repository
- - 2.type THE following command in terminal (where the repo is located) pip3 install -r requirements.txt
- - 3.set up enviorment variables such as export FLASK_APP=applications.py , export DATABASE_URL=url
+ - clone the repository
+ - type THE following command in terminal (where the repo is located) pip3 install -r requirements.txt
+ - set up enviorment variables such as export FLASK_APP=applications.py , export DATABASE_URL=url
 
  objectives:
  - [] 
