@@ -9,4 +9,5 @@
  - set up enviorment variables such as export FLASK_APP=applications.py , export DATABASE_URL=url
 
  objectives:
- - [] to learn about cookies
+ - [x] to learn about cookies
+ - [x] to learn about sessions
