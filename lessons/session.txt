@@ -1,0 +1,15 @@
+what is session ?
+
+-  Like Cookie, Session data is stored on client. Session is the time interval when a client logs into a server and logs out of it. The data, which is needed to be held across this session, is stored in the client browser.
+
+A session with each client is assigned a Session ID. The Session data is stored on top of cookies and the server signs them cryptographically. For this encryption, a Flask application needs a defined SECRET_KEY.
+
+Session object is also a dictionary object containing key-value pairs of session variables and associated values.
+
+For example, to set a ‘username’ session variable use the statement −
+
+Session[‘username’] = ’admin’
+To release a session variable use pop() method.
+
+session.pop('username', None)
+The following code is a simple demonstration of session works in Flask. URL ‘/’ simply prompts user to log in, as session variable ‘username’ is not set.

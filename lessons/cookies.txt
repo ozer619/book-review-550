@@ -1,0 +1,15 @@
+-Meet the computer cookie
+
+
+-  A computer “cookie” is more formally known as an HTTP cookie, a web cookie, an Internet cookie or a browser cookie. The name is a shorter version of “magic cookie,” which is a term for a packet of data that a computer receives and then sends back without changing or altering it.
+
+No matter what it’s called, a computer cookie consists of information. When you visit a website, the website sends the cookie to your computer. Your computer stores it in a file located inside your web browser. (To help you find it, this file is often called “Cookies.”)
+
+What do browser cookies do?
+
+-  The purpose of the computer cookie is to help the website keep track of your visits and activity. This isn’t always a bad thing. For example, many online retailers use cookies to keep track of the items in a user’s shopping cart as they explore the site. Without cookies, your shopping cart would reset to zero every time you clicked a new link on the site. That would make it difficult to buy anything online!
+
+A website might also use cookies to keep a record of your most recent visit or to record your login information. Many people find this useful so that they can store passwords on frequently used sites, or simply so they know what they have visited or downloaded in the past.
+
+Different types of cookies keep track of different activities. Session cookies are used only when a person is actively navigating a website; once you leave the site, the session cookie disappears. Tracking cookies may be used to create long-term records of multiple visits to the same site. Authentication cookies track whether a user is logged in, and if so, under what name.
+
