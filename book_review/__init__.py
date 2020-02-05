@@ -1,9 +1,8 @@
-from config import Config
-from flask import Flask, session
-from flask_session import Session
+from flask import Flask
 from flask_migrate import Migrate
 from sqlalchemy.orm import scoped_session, sessionmaker
 import os
+from sqlalchemy import create_engine
 
 app = Flask(__name__)
 
@@ -11,8 +10,11 @@ app = Flask(__name__)
 if not os.getenv("DATABASE_URL"):
     raise RuntimeError("DATABASE_URL is not set")
 
+from config import Config
 app.config.from_object(Config)
-migrate = Migrate(app, db)
+
+# Set up database
+engine = create_engine(os.getenv("DATABASE_URL")) 
 db = scoped_session(sessionmaker(bind=engine))
 
 from book_review import routes
