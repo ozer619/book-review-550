@@ -11,3 +11,6 @@
  objectives:
  - [x] to learn about cookies
  - [x] to learn about sessions
+ - [ ] to learn about postgresql
+ - [ ] to learn about login decorator flask
+ 

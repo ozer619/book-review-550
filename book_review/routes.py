@@ -4,4 +4,4 @@ from flask import flash, jsonify, redirect, render_template, request
 
 @app.route("/")
 def index():
-    return render_template("register.htm")
+    return render_template("login.htm")
