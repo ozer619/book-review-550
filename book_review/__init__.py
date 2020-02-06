@@ -4,6 +4,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 import os
 from sqlalchemy import create_engine
 
+
 app = Flask(__name__)
 
 # Check for environment variable
@@ -12,9 +13,12 @@ if not os.getenv("DATABASE_URL"):
 
 from config import Config
 app.config.from_object(Config)
+from models import *
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL") or "sqlite:///book-review.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db.init_app(app)
+db.create_all()
 
-# Set up database
-engine = create_engine(os.getenv("DATABASE_URL")) 
-db = scoped_session(sessionmaker(bind=engine))
+
 
 from book_review import routes

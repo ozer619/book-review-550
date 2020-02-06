@@ -11,6 +11,8 @@ class Config(object):
     # Ensure templates are auto-reloaded
     app.config["TEMPLATES_AUTO_RELOAD"] = True
     Session(app)
+    # set up database
+
     
   
     
