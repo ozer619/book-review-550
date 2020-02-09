@@ -12,13 +12,14 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 login_manager=LoginManager()
-login_manager.login_view='routes.login'
+login_manager.login_view='login'
 login_manager.init_app(app)
 
-from book_review import models
+from book_review.models import *
+
 
 @login_manager.user_loader
 def load_user(user_id):
-    return user.query.get(int(user_id))
+    return User.query.get(int(user_id))
 
 from book_review import routes
