@@ -3,8 +3,9 @@ from flask import flash, jsonify, redirect, render_template, request, url_for,se
 from werkzeug.security import check_password_hash, generate_password_hash
 from book_review.models import *
 from book_review import db
-from flask_login import login_required,current_user,login_user
+from flask_login import login_required,current_user,login_user,logout_user
 from flask_session import Session
+
 
 @app.route("/")
 @login_required
@@ -26,7 +27,8 @@ def login():
         if not check_password_hash(user.password_hash,password):
             message="username or password incorrect"
             return render_template("apology.htm",message=message)
-        login_user(user)
+           
+        login_user(user,remember=False)
         # Redirect user to home page
         return redirect("/")
     else:
@@ -69,6 +71,7 @@ def logout():
 
     # Forget any user_id
     session.clear()
+    logout_user()
 
     # Redirect user to login form
     return redirect("/")

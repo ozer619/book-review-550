@@ -34,3 +34,7 @@ main img
     /* constrain images on small screens . */
     max-width: 100%;
 }
+.sbar{
+    background-image: url("books.jpg");
+    height: 300px;
+}
