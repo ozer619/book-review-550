@@ -5,6 +5,7 @@ class Config(object):
     SESSION_PERMANENT = False
     SESSION_TYPE = "filesystem"
     
+
     # Ensure templates are auto-reloaded
     TEMPLATES_AUTO_RELOAD = True
 
@@ -13,7 +14,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     #set SECRET KEY 
-    SECRET_KEY="nou"
+    SECRET_KEY=os.urandom(24)
 
     # Ensure templates are auto-reloaded
     TEMPLATES_AUTO_RELOAD = True 
