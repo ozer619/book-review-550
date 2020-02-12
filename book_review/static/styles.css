@@ -1,3 +1,4 @@
+
 nav .navbar-brand
 {
     /* size for brand */
@@ -23,7 +24,7 @@ main .form-control
 main
 {
     /* scroll horizontally as needed */
-    overflow-x: auto;
+    overflow-x: hidden;
 
     /* center contents */
     text-align: center;
@@ -34,7 +35,9 @@ main img
     /* constrain images on small screens . */
     max-width: 100%;
 }
-.sbar{
-    background-image: url("books.jpg");
-    height: 300px;
+ 
+#login_form{
+
+    margin-top: 7em;
+    margin-bottom: 3em;
 }

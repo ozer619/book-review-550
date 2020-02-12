@@ -1,12 +1,54 @@
 {% extends "layout.html" %}
 
+
+{% block code %}
+<style>
+main
+{   
+    background-image: url("static/Books.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 29em;
+}
+.form-header
+{
+    text-align: center;
+    justify-content: center;
+}
+.input-search
+{
+    width: 30%;
+    height: 52%;
+    padding : 1%;
+    border: 1px solid black;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20em;
+}
+.input-search-button
+{
+    width: 10%;
+    height: 30%;
+    padding : .5%;
+    border: 1px solid black;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Lemonada', cursive;
+}
+</style>
+
+{% endblock %}
+
 {% block title %}
     index
 {% endblock %}
 
 {% block main %}
-<div class="sbar">
-hello farunds
 
-</div>>
+    <form class="form-header" action="">
+           <input class="input-search" type="text" name="search" id="search" placeholder="Search Here">
+            <button class="input-search-button" type="submit">Search</button>
+    </form>
 {% endblock %}

@@ -15,6 +15,7 @@ class Config(object):
     
     #set SECRET KEY 
     SECRET_KEY=os.urandom(24)
-
-    # Ensure templates are auto-reloaded
-    TEMPLATES_AUTO_RELOAD = True 
+   
+  
+    
+   

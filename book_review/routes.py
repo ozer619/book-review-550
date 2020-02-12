@@ -10,8 +10,7 @@ from flask_session import Session
 @app.route("/")
 @login_required
 def index():
-    message="u are logged in"
-    return render_template("apology.htm",message=message)
+     return render_template("index.htm")
 
 @app.route("/login",methods=["POST","GET"])
 def login():
