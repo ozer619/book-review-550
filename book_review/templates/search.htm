@@ -3,13 +3,20 @@
 
 {% block code %}
 <style>
-main
+*{
+    
+    
+    padding-left: 0% !important;
+    
+}
+.form-header
 {   
     background-image: url("static/Books.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 29em;
+
 }
 .form-header
 {
@@ -19,23 +26,25 @@ main
 .input-search
 {
     width: 30%;
-    height: 52%;
+    height: 7%;
     padding : 1%;
     border: 1px solid black;
     font-size: 16px;
     border-radius: 5px;
     margin-top: 20em;
+    text-align: center;
 }
 .input-search-button
 {
     width: 10%;
-    height: 30%;
-    padding : .5%;
+    height: 7%;
+    padding : .4%;
     border: 1px solid black;
     font-size: 16px;
     border-radius: 5px;
     font-weight: bold;
     font-family: 'Lemonada', cursive;
+    
 }
 </style>
 
@@ -47,8 +56,34 @@ main
 
 {% block main %}
 
-    <form class="form-header" action="">
+    <form class="form-header" action="/search" method="post">
            <input class="input-search" type="text" name="search" id="search" placeholder="Search Here">
             <button class="input-search-button" type="submit">Search</button>
     </form>
+     {% if flag==1 %}
+     <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ISBN</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Year</th>
+          </tr>
+        </thead>
+        <tbody>
+      
+           {% for book in books %}
+            <tr>
+            <th scope="row">{{ book.isbn }}</th>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.year }}</td>
+            </tr>
+      
+            {% endfor %}
+           
+        </tbody>
+      </table>
+     {% endif %}
+
 {% endblock %}

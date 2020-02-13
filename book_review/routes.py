@@ -5,12 +5,13 @@ from book_review.models import *
 from book_review import db
 from flask_login import login_required,current_user,login_user,logout_user
 from flask_session import Session
+from sqlalchemy import or_
 
 
 @app.route("/")
 @login_required
 def index():
-     return render_template("index.htm")
+     return redirect("search")
 
 @app.route("/login",methods=["POST","GET"])
 def login():
@@ -65,6 +66,7 @@ def register():
 
 
 @app.route("/logout")
+@login_required
 def logout():
     """Log user out"""
 
@@ -74,3 +76,21 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
+
+@app.route("/search",methods=["POST","GET"])
+@login_required
+def search():
+    if request.method == "POST":
+        flag=1
+        search = request.form.get("search")
+        books=Books.query.filter(or_(Books.author.like('%' + search + '%'),
+        Books.title.like('%' + search + '%'),
+        Books.isbn.like('%' + search + '%'))).all()
+        if not books:
+            message="no results found"
+            return render_template("apology.htm",message=message)
+     
+        return render_template("search.htm",flag=flag,books=books)
+    else:
+        flag=0
+        return render_template("search.htm",flag=flag) 
