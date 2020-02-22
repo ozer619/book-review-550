@@ -75,7 +75,7 @@
            {% for book in books %}
             <tr>
             <th scope="row">{{ book.isbn }}</th>
-            <td>{{ book.title }}</td>
+            <td><a href="{{ url_for('review', book_id=book.id) }}" title="{{ book.title }}">{{ book.title }}</a></td>
             <td>{{ book.author }}</td>
             <td>{{ book.year }}</td>
             </tr>

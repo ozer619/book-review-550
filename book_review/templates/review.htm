@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Re-view
+{% endblock %}
+{% block code %}
+<style>
+    * {
+
+
+        padding-left: 0% !important;
+
+    }
+
+    main {
+        background-image: url("/static/texture5.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+
+    }
+
+    footer {
+        background-color: rgb(42, 42, 48);
+
+    }
+
+    h1 {
+        margin-top: 2%;
+        padding: 2%;
+        color: azure;
+    }
+
+    #api{
+        margin-left: 50%;
+        width: auto;
+        height:26em;
+        margin-top: 3%;
+        margin-bottom: 2%;
+        
+    }
+    #display{
+        margin-left: 3%;
+        margin-top: -34%;
+    }
+    .btn-default:hover {
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+    }
+    #rew{
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 8%;
+        margin-bottom: 3%;
+        padding: 3%;
+        
+    }
+    #kitab{
+        justify-content: center;
+        padding:2%;
+        
+    }
+    #kitab li{
+        padding:1%;
+    }
+    #submit{
+        width: 100%;
+        padding: 0%;
+        margin-top: -3%;
+    }
+    #rating{
+        margin-bottom: 4%;
+        padding: 1%;
+        
+    }
+    #cb{
+        padding: 0%;
+    }
+    hr{
+        margin-left: 3%;
+    }
+    h5{
+        padding-top: 4%;
+        margin-left: -3%;
+    }
+    #kitab1{
+        justify-content: center;
+        padding:2%;
+        margin-top: 5%;
+    }
+    #kitab1 li{
+      
+        padding:2%;
+        margin-top: 2%;
+        margin-left: 3%;
+    }
+    #good{
+        padding-top: 6%;
+    }
+</style>
+{% endblock %}
+{% block main %}
+<h1>Review</h1>
+<div class="card" id="api">
+    <div class="card-body">
+      <h2 id="good" class="card-title">Good reads review</h3>
+      <ul  style="list-style-type:none;" class="card-text" id="kitab1">
+        <li><h4>Average rating: {{res['books'][0]['average_rating']}}</h4></li>
+        <li><h4>No of ratings: {{res['books'][0]['work_reviews_count']}}</h4></li>
+     </ul>
+   
+    </div>
+  </div>
+<div class="card bg-light mb-3" style="width:37em; height:66%; " id="display">
+    <div class="card-header">BOOK</div>
+    <div class="card-body" id="cb">
+        <h5 class="card-title">{{kitab.title}}</h5>
+        <ul  style="list-style-type:circle;" class="card-text" id="kitab">
+                <li>{{kitab.isbn}}</li>
+                <li>{{kitab.author}}</li>
+                <li>{{kitab.year}}</li>
+              
+              
+        </ul>
+    </div>
+    <form action="/review" method="POST">
+        <input class="input-search" type="text"  id="rating"  placeholder="add rating from 1 to 5 here" autocomplete="off" name="rating_b">
+        <textarea placeholder="Write your reviews here" name="rating_t" style="text-align:center; height: 141px; width:100%; padding:0%;"></textarea>
+        
+        <input class="btn btn-default" id="submit" name="submit" type="submit" value="submit">
+    </form> 
+   
+</div>
+
+
+<div class="card" id="rew">
+    <div class="card-body">
+      <h2 class="card-title">others- reviews</h2>
+      <hr style="height:3%;">
+      <ul  style="list-style-type:circle;" class="card-text" id="review_for_book">
+        {%for book in review_of_book%}
+        <li><h4>This review is given by: {{book.User.username}}</li>
+        <li>comment: {{book.comment}}</li>
+        <li>rating: {{book.rating}}</li>
+        <hr>
+        {% endfor %}
+      
+</ul>
+      
+    </div>
+</div>
+ 
+    {% endblock %}
