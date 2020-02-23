@@ -16,7 +16,7 @@ class Books(db.Model):
     __tabelname__='books'
   
     id = db.Column(db.Integer, primary_key=True)
-    isbn = db.Column(db.String(256), index=True , unique=True ,nullable=False)
+    isbn = db.Column(db.String(256), index=True, nullable=False)
     title = db.Column(db.String(150),nullable=False)
     author = db.Column(db.String(120),nullable=False)
     year = db.Column(db.Integer,nullable=False) 
