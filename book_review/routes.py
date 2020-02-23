@@ -32,6 +32,7 @@ def login():
             return render_template("apology.htm", message=message)
 
         login_user(user, remember=False)
+        session["user_id"] = user.id
         # Redirect user to home page
         return redirect("/")
     else:
