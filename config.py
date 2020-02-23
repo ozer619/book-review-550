@@ -14,8 +14,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     #set SECRET KEY 
-    SECRET_KEY=os.urandom(24)
-   
+    SECRET_KEY='asdasdasdasdjksndasiodnjkwn edjkn238931'
   
     
    
