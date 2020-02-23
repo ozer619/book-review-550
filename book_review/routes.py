@@ -1,7 +1,9 @@
 from book_review import app
 from flask import flash, jsonify, redirect, render_template, request, url_for, session
+
 from werkzeug.security import check_password_hash, generate_password_hash
 from book_review.models import *
+
 from book_review import db
 from flask_login import login_required, current_user, login_user, logout_user
 from flask_session import Session
